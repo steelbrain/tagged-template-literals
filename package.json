@@ -1,0 +1,31 @@
+{
+  "name": "tagged-template-literals",
+  "version": "1.0.0",
+  "description": "Tagged ES6 template helper",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "apm test",
+    "compile": "ucompiler go"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steelbrain/tagged-template-literals.git"
+  },
+  "keywords": [
+    "trim",
+    "string",
+    "text"
+  ],
+  "author": "steelbrain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steelbrain/tagged-template-literals/issues"
+  },
+  "homepage": "https://github.com/steelbrain/tagged-template-literals#readme",
+  "dependencies": { },
+  "devDependencies": {
+    "babel-preset-steelbrain": "^2.0.1",
+    "ucompiler": "^3.1.8",
+    "ucompiler-plugin-babel": "^3.1.1"
+  }
+}
