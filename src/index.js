@@ -16,11 +16,18 @@ function taggedTemplateLiterals(
   invariant(Array.isArray(values), 'Values should be an array')
   invariant(Array.isArray(strings), 'Strings should be an array')
 
-  const length = values.length || 1
+  const length = strings.length > values.length ? strings.length : values.length
   const toReturn = []
   const filterCallback = typeof callback === 'function' ? callback : noOp
   for (let i = 0; i < length; ++i) {
-    toReturn.push(strings[i], filterCallback(values[i]))
+    const string = strings[i]
+    const value = values[i]
+    if (string) {
+      toReturn.push(string)
+    }
+    if (value) {
+      toReturn.push(filterCallback(value))
+    }
   }
   return toReturn.join('')
 }
