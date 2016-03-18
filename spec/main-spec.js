@@ -23,4 +23,7 @@ describe('tagged-template-literals', function() {
   it('works well with filtering callbacks', function() {
     expect(escapingProxy`Hello ${'<div />'}`).toBe('Hello &lt;div /&gt;')
   })
+  it('works with random stuff', function() {
+    expect(proxy`Hello ${'Dolly'} This ${'is'} Steel`).toBe('Hello Dolly This is Steel')
+  })
 })
