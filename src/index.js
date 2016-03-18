@@ -2,16 +2,21 @@
 
 /* @flow */
 
+import invariant from 'assert'
+
 function noOp(param: string): string {
   return param
 }
 
 function taggedTemplateLiterals(
-  values: Array<string>,
   strings: Array<string>,
+  values: Array<string>,
   callback: ?((param: string) => string)
 ): string {
-  const length = values.length
+  invariant(Array.isArray(values), 'Values should be an array')
+  invariant(Array.isArray(strings), 'Strings should be an array')
+
+  const length = values.length || 1
   const toReturn = []
   const filterCallback = typeof callback === 'function' ? callback : noOp
   for (let i = 0; i < length; ++i) {
