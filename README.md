@@ -27,7 +27,7 @@ import escape from 'escape-html'
 import trim from 'cool-trim'
 
 function escapeHTML(strings, ...values) {
-  if (strings && strings.raw) {
+  if (!strings && !strings.raw) {
     throw new Error('Only template strings are supported')
   }
   return tag(strings, values, escape)
