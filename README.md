@@ -22,27 +22,26 @@ module.exports = taggedTemplateLiterals
 
 ## Examples
 ```js
-import tag from 'tagged-template-literals'
 import escape from 'escape-html'
-import trim from 'cool-trim'
+import taggedTemplate from 'tagged-template-literals'
 
 function escapeHTML(strings, ...values) {
   if (!strings && !strings.raw) {
     throw new Error('Only template strings are supported')
   }
-  return tag(strings, values, escape)
+  return taggedTemplate(strings, values, escape)
 }
 
 const dangerous = '<script></script>'
-const escaped = trim(escapeHTML`
+const escaped = escapeHTML`
   Hello there <div>
     ${dangerous}
   </div>
 `)
 console.log(escaped === `
-Hello there <div>
-  &lt;script&gt;&lt;/script&gt;
-</div>
+  Hello there <div>
+    &lt;script&gt;&lt;/script&gt;
+  </div>
 `) // true
 ```
 
