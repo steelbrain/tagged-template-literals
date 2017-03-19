@@ -1,5 +1,7 @@
 Tagged Template Literals
 =====================
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/tagged-template-literals.svg)](https://greenkeeper.io/)
 Tagged Template Literals is a base library to make your packages simpler. See the usage for example usage.
 
 ## Installation
