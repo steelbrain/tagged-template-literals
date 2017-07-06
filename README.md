@@ -14,8 +14,8 @@ npm install --save tagged-template-literals
 
 ```js
 function taggedTemplateLiterals(
-  values: Array<string>,
   strings: Array<string>,
+  values: Array<string>,
   callback: ?((param: string) => string)
 ): string
 
